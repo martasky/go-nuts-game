@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+
+
+body {
+    background-color: cornsilk;
+    margin: 1vw;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, h2, p {
+    color: blueviolet;
+}
+
+.background{
+    width: 100%;
+}
+
+p {
+    font-size:  1.5rem;
+}

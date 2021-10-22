@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Go nuts!</title>
+</head>
+
+<body>
+    <header>
+        <h1>GO NUTS!</h1>
+        <nav id="globalNav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Learn more</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="screen">
+            <div id="game">
+                <div id="game_background">
+                </div>
+                <div id="game_ui">
+                    <div id="time_board">
+                        <div id="background"></div>
+                        <div id="liquid"></div>
+
+
+                    </div>
+                    <div id="health_board">
+                        <div id="life1" class="redheart"></div>
+                        <div id="life2" class="redheart"></div>
+                        <div id="life3" class="redheart"></div>
+                    </div>
+                    <div id="score_board">
+                        <p id="score"></p>
+                    </div>
+
+                    <div id="pause_buttoncontainer">
+                        <div id="pause_button"></div>
+                    </div>
+                    <div id="home_buttoncontainer" class="home_button_pos2">
+                        <div id="home_button" class="home_button"></div>
+                    </div>
+
+                    <div id="mute2" class="mute_pos2">
+                        <div id="mute_button2" class="mute_button"></div>
+                    </div>
+
+                    <audio id="nut_sound" src="sound/bite.mp3"></audio>
+                    <audio id="anvil_sound" src="sound/whistlelong.mp3"></audio>
+                    <audio id="almond_sound" src="sound/almondsound.mp3"></audio>
+                    <audio id="button_sound" src="sound/buttonsound.mp3"></audio>
+
+                </div>
+                <audio id="background_sound" src="sound/backgroundmusic.mp3"></audio>
+                <div id="game_sprites">
+                    <div id="character" class="character_pos">
+                        <div id="character_sprite"></div>
+                    </div>
+                    <div id="anvil_container">
+                        <div id="anvil_sprite" class="anvil_sprite"></div>
+                    </div>
+                    <div id="acorn_container_0">
+                        <div id="acorn_sprite_0" class="acorn_sprite"></div>
+                    </div>
+                    <div id="acorn_container_1">
+                        <div id="acorn_sprite_1" class="acorn_sprite"></div>
+                    </div>
+                    <div id="acorn_container_2" class="acorn">
+                        <div id="acorn_sprite_2" class="acorn_sprite"></div>
+                    </div>
+                    <div id="acorn_container_3" class="acorn">
+                        <div id="acorn_sprite_3" class="acorn_sprite"></div>
+                    </div>
+
+                    <div id="walnut_container_0" class="walnut">
+                        <div id="walnut_sprite_0" class="walnut_sprite"></div>
+                    </div>
+                    <div id="walnut_container_1" class="walnut">
+                        <div id="walnut_sprite_1" class="walnut_sprite"></div>
+                    </div>
+                    <div id="macadamia_container_0" class="macadamia">
+                        <div id="macadamia_sprite_0" class="macadamia_sprite"></div>
+                    </div>
+                    <div id="macadamia_container_1" class="macadamia">
+                        <div id="macadamia_sprite_1" class="macadamia_sprite"></div>
+                    </div>
+                    <div id="almond_container_0" class="almond">
+                        <div id="almond_sprite_0" class="almond_sprite"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="title_screen" class="hidden">
+                <div id="play">
+                    <div id="play_button" class="scaleUp"></div>
+                </div>
+                <div id="how_to_play">
+                    <div id="how_to_play_button"></div>
+                </div>
+
+
+
+            </div>
+            <div id="instructions" class="hidden">
+                <h1>Go nuts!</h1>
+                <article>
+                    <div class="font">Help Anton the squirrel survive the winter. </div>
+
+                    <div class="font">You collect nuts by clicking on them. Please remember that Anton is severely allergic to almonds and watch out for anvils falling from the sky.</div>
+                    <div class="font">Collect 500 points in 60 seconds and don’t die.</div>
+                </article>
+                <figure><img src="assets/acorn.svg">
+                    <figcaption>
+                        <p>Acorn + 10 points</p>
+                    </figcaption>
+                </figure>
+                <figure><img src="assets/walnut.svg">
+                    <figcaption>
+                        <p>Walnut + 20 points</p>
+                    </figcaption>
+                </figure>
+                <figure><img src="assets/macadamia.svg">
+                    <figcaption>
+                        <p>Macadamia + 50 points</p>
+                    </figcaption>
+                </figure>
+                <figure><img src="assets/almond.svg">
+                    <figcaption>
+                        <p>Almond - 1 life</p>
+                    </figcaption>
+                </figure>
+                <figure><img src="assets/anvil.svg">
+                    <figcaption>
+                        <p>Anvil -> Sudden death</p>
+                    </figcaption>
+                </figure>
+                <div id="close_buttoncontainer">
+                    <div id="close_button"></div>
+                </div>
+            </div>
+            <div id="game_over" class="hidden">
+                <div id="restart">
+                    <div id="restart_button"></div>
+                </div>
+                <div id="home_buttoncontainer2" class="home_button_pos2">
+                    <div id="home_button2" class="home_button"></div>
+                </div>
+                <audio id="gameover_sound" src="sound/disappointment.mp3"></audio>
+            </div>
+            <div id="game_over2" class="hidden">
+                <div id="restart2">
+                    <div id="restart_button2"></div>
+                </div>
+                <div id="home_buttoncontainer3" class="home_button_pos2">
+                    <div id="home_button3" class="home_button"></div>
+                </div>
+                <audio id="gameover_sound2" src="sound/gameover.mp3"></audio>
+            </div>
+            <div id="level_complete" class="hidden">
+                <div id="level_complete_squirrel" class="hidden">
+                    <div id="nuts_rotating_container" class="nuts_rotating"></div>
+
+                    <div id="play2">
+                        <div id="play_button2"></div>
+                    </div>
+                    <div id="home_buttoncontainer4" class="home_button_pos2">
+                        <div id="home_button4" class="home_button"></div>
+                    </div>
+                </div>
+                <audio id="levelcomplete_sound" src="sound/applause.mp3"></audio>
+                <audio id="levelcomplete_sound2" src="sound/levelcomplete.mp3"></audio>
+            </div>
+
+        </section>
+        <aside id="gameinfo">
+            <p>Welcome to Go nuts! - a simple game where you have to help the squirrel survive the winter.
+
+                Collect 500 points in 60 seconds or Anton will die! </p>
+        </aside>
+    </main>
+    <footer>
+        <nav id="someNav">
+
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+            <p>Music: https://www.freesfx.co.uk/</p>
+            <p>@ Marta Skrzypczak 2020</p>
+        </nav>
+    </footer>
+    <script src="gonutsnew.js"></script>
+</body>
+
+</html>

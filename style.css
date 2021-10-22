@@ -1,0 +1,1009 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600&display=swap');
+
+body {
+    background-color: cornsilk;
+
+
+}
+figure {
+    display: flex;
+    margin: 0;
+    margin-left: 2vw;
+}
+figure img {
+    width:6vw;
+    height:6vw;
+
+}
+figcaption {
+    margin-left: 1vw;
+}
+article {
+    grid-column: 1 / 3;
+    margin-left: 2vw;
+}
+.font {
+    font-size: 1.2vw;
+    padding: 0.7vw;
+    margin-left: 2vw;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(44, 0, 76);
+}
+
+main {
+    display: grid;
+    grid-template-areas: "info game";
+    grid-gap: 3vw;
+    grid-template-columns: 1fr 75%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4vw;
+    color: blueviolet;
+}
+
+ul {
+
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+}
+
+#someNav ul {
+    justify-content: flex-start;
+
+}
+
+#someNav li {
+    padding-left: 3vw;
+}
+
+li {
+    font-size: 2vw;
+    font-family: 'Syne Mono', monospace;
+
+}
+
+
+aside {
+    grid-area: info;
+    margin-left: 2vw;
+
+}
+
+p {
+    font-size: 1.5vw;
+    font-family: 'Syne mono', monospace;
+    color: blueviolet;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: darkviolet;
+}
+
+#screen {
+    position: relative;
+
+   /* margin-left: 25px; */
+    grid-area: game;
+    width: 64vw;
+    height: 36vw;
+
+    /*border-bottom: 0.5vw black solid;
+     border-top: 0.5vw black solid;
+     border-left: 0.5vw black solid;
+     border-right: 0.5vw black solid;
+    */
+    /*border: 4px black solid;*/
+    /*margin-bottom: 3vw;*/
+    outline: 0.5vw solid black;
+  overflow: hidden;
+
+}
+
+#game {
+    width: 100%;
+    height: 100%;
+}
+
+#time_board {
+
+}
+#background {
+    position: absolute;
+    background-image: url(assets/timer-background.svg);
+    background-size: cover;
+
+    width: 12.4vw;
+    height: 3.8vw;
+    margin-left: 1vw;
+
+}
+#liquid {
+    position: absolute;
+    background-image: url(assets/timer-liquid.svg);
+    background-size: cover;
+    width: 12.4vw;
+    height: 3.8vw;
+    margin-left: 1vw;
+    clip: rect(0vw, 12.4vw, 3.8vw, 0vw);
+}
+
+.timer {
+    animation-name: timer;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes timer {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+.scaleUp:hover {
+    transform: scale(1.1,1.1);
+    transition: transform .5s linear;
+}
+#pause_buttoncontainer {
+    position: absolute;
+    left:0vw;
+    top:29.5vw;
+    cursor: pointer;
+
+}
+#pause_button {
+    background-image: url(assets/pause-button.svg);
+    background-size: 100%;
+    width: 3vw;
+    height: 3vw;
+
+
+}
+
+#game_ui {
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+    width: 64vw;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+#title_screen {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background-image: url(assets/welcome-screen.svg);
+    background-size: 100%;
+
+}
+#play{
+    position: absolute;
+    left:37vw;
+    top:15vw;
+    cursor:pointer;
+}
+#play_button {
+       background-image: url(assets/play-button.svg);
+    background-size: 100%;
+    width:12vw;
+        height:6.3vw;
+}
+
+#play_button2 {
+       background-image: url(assets/play-againbutton.svg);
+    background-size: 100%;
+    width:12vw;
+        height:6.3vw;
+}
+#how_to_play {
+    position: absolute;
+    left:32vw;
+    top:22vw;
+      cursor:pointer;
+}
+#how_to_play_button {
+     background-image: url(assets/howdoiplay-button.svg);
+    background-size: 100%;
+    width:22vw;
+        height:6.3vw;
+}
+#mute {}
+#mute2 {}
+.mute_pos {
+      position: absolute;
+    left:0vw;
+    top:33vw;
+      cursor:pointer;
+}
+.mute_pos2 {
+      position: absolute;
+    left:0vw;
+    top:26vw;
+      cursor:pointer;
+}
+.mute_button {
+      background-image: url(assets/sound-button.svg);
+    background-size: 100%;
+    width:3vw;
+        height:3vw;
+}
+#unmute {}
+      #unmute2 {}
+/*position: absolute;
+    left:0vw;
+    top:25vw;
+      cursor:pointer;*/
+
+.unmute_button {
+      background-image: url(assets/muted-button.svg);
+    background-size: 100%;
+    width:3vw;
+        height:3vw;
+}
+#game_background {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/background.svg);
+    background-size: 100%;
+
+}
+#game_over {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background-image: url(assets/game-over-ver2.svg);
+    background-size: 100%;
+
+}
+
+#game_over2 {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background-image: url(assets/gameover-almond.svg);
+    background-size: 100%;
+}
+#restart{
+    position: absolute;
+    left:39vw;
+    top:29vw;
+      cursor:pointer;
+}
+#restart2{
+    position: absolute;
+   left:39vw;
+    top:29vw;
+      cursor:pointer;
+}
+#restart_button {
+    background-image: url(assets/replay-button.svg);
+    background-size: 100%;
+    width:14vw;
+        height:4.8vw;
+}
+#restart_button2 {
+    background-image: url(assets/replay-button.svg);
+    background-size: 100%;
+    width:14vw;
+        height:4.8vw;
+}
+
+#home_buttoncontainer{}
+#home_buttoncontainer2{}
+#home_buttoncontainer3{}
+#home_buttoncontainer4{}
+
+#home_button {}
+#home_button2 {}
+#home_button3 {}
+#home_button4 {}
+
+
+
+    .home_button_pos{
+         position: absolute;
+   left:0vw;
+    top:27vw;
+      cursor:pointer;
+    }
+ .home_button_pos2{
+         position: absolute;
+   left:0vw;
+    top:33vw;
+      cursor:pointer;
+    }
+.home_button {
+         background-image: url(assets/home-button.svg);
+    background-size: 100%;
+    width:3vw;
+        height:3vw;
+}
+#level_complete {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background-image: url(assets/level-completed-text.svg);
+    background-size: 100%;
+
+}
+#level_complete_squirrel {
+    position: absolute;
+    left: 0;
+    top:0vw;
+    width: 100%;
+    height:100%;
+    background-image: url(assets/level-complete.svg);
+    background-size: 100%;
+    animation-delay: 1s;
+    visibility: hidden;
+}
+
+    .appear {
+    animation: appear 2s;
+        animation-fill-mode: forwards;
+
+
+}
+@keyframes appear {
+    from {
+        transform: translateY(39vw);
+
+         visibility: visible;
+    }
+
+    to {
+        transform: translateY(0vw);
+
+        visibility: visible;
+    }
+}
+#nuts_rotating_container {
+    position: absolute;
+    left: 1.5vw;
+    top:0vw;
+    width: 66.8vw;
+    height:58vw;
+    background-image: url(assets/level-completed-nuts.svg);
+    background-size: 100%;
+}
+.nuts_rotating {
+    animation: nutsrotate 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+@keyframes nutsrotate {
+
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#play2 {
+    position: absolute;
+    top: 21vw;
+    left: 41vw;
+      cursor:pointer;
+
+}
+
+#instructions {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+   background-color: tan;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#instructions h1 {
+    font-size: 3.3vw;
+    grid-column: 1 / 3;
+    margin-bottom: 0;
+    margin-top: 1vw;
+    font-family: 'Anton', sans-serif;
+     letter-spacing: 0.4vw;
+}
+#instructions p {
+    font-size:1.2vw;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.1vw;
+
+}
+#close_buttoncontainer{
+     position: absolute;
+    top: 0vw;
+    left: 59vw;
+      cursor:pointer;
+}
+#close_button{
+          background-image: url(assets/close-button.svg);
+    background-size: 100%;
+    width:5vw;
+        height:5vw;
+}
+#score_board {
+    background-image: url(assets/points.svg);
+    background-size: 100%;
+    width: 5vw;
+    height: 4.5vw;
+    margin-right: 5vw;
+    margin-top: .6vw;
+
+}
+
+#score {
+/*position: absolute;
+    left: 2vw;
+    top:1vw;
+    */
+    margin-top: 0vw;
+
+    margin-left: 5vw;
+    font-size: 2.5vw;
+    font-family: 'Anton', sans-serif;
+
+}
+
+#health_board {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    left: 28vw;
+    top: 1vw;
+
+    width: 10vw;
+    height: 2.5vw;
+
+
+}
+
+#life1 {}
+
+.redheart {
+    background-image: url(assets/heart.svg);
+    background-size: 100%;
+    width: 3vw;
+    height: 2.5vw;
+
+
+}
+
+.blackheart {
+    background-image: url(assets/no-heart.svg);
+    background-size: 100%;
+}
+
+.tenpoints {
+       background-image: url(assets/10points.svg);
+    background-size: 100%;
+     width: 1.9vw;
+        height:1.55vw;
+     animation: showpoints 3s;
+
+}
+.twentypoints {
+       background-image: url(assets/20points.svg);
+    background-size: 100%;
+    width: 1.9vw;
+        height:1.55vw;
+     animation: showpoints 3s;
+}
+.fiftypoints {
+       background-image: url(assets/50points.svg);
+    background-size: 100%;
+     width: 1.9vw;
+        height:1.55vw;
+     animation: showpoints 3s;
+}
+.minuslife {
+       background-image: url(assets/1life.svg);
+    background-size: 100%;
+     width: 1.9vw;
+        height:1.55vw;
+   animation: showpoints 3s;
+  /*  animation-delay: 0.2s; */
+}
+@keyframes showpoints {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+/* #three_lives {
+
+    left: 25vw;
+}
+*/
+
+/*.three_lives {
+
+    background-image: url(assets/health-bar-2-lives.svg);
+    background-size: 100%;
+    width: 6.6vw;
+    height: 2vw;
+
+    margin-top: .4vw;
+
+
+}
+*/
+
+/*#time_board {
+    background-image: url(assets/health-bar-time-passing.svg);
+    background-size: 100%;
+    width: 10.4vw;
+    height: 2.8vw;
+
+
+*/
+}
+
+#game_sprites {
+    position: absolute;
+    left: 0vw;
+    top: 0vw;
+}
+
+#character {
+    position: absolute;
+    background-image: url(assets/character.svg);
+    background-size: 100%;
+    width: 10vw;
+    height: 9.5vw;
+
+}
+
+.character_pos {
+    top: 25.5vw;
+    left: 42vw;
+}
+
+.character_sprite {
+    animation: character_rotation 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes character_rotation {
+    0% {
+        transform: rotate(-7deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+#anvil_container{
+
+}
+.anvil_pos {
+    top: -6vw;
+    left: 44vw;
+ position: absolute;
+}
+
+.anvil_sprite {
+    background-image: url(assets/anvil.svg);
+    background-size: 100%;
+    width: 7vw;
+    height: 3.7vw;
+
+}
+
+.anvil_falling {
+
+    animation: anvil_falling 5s;
+
+    animation-iteration-count: infinite;
+    animation-delay: 10s;
+
+}
+
+@keyframes anvil_falling {
+    from {
+        transform: translateY(-5vw);
+
+    }
+
+    to {
+        transform: translateY(33vw);
+    }
+}
+
+.anvil_scaling {
+    animation: anvil_scaling 5s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+}
+
+
+@keyframes anvil_scaling {
+    from {
+        transform: scale(2, 2);
+    }
+
+    to {
+        transform: scale(0.5, 0.5);
+    }
+}
+
+.disappear {
+    transform: scale(0, 0);
+    transition: transform 0.5s;
+}
+
+.acorn_sprite {
+
+    width: 5vw;
+    height: 6.9vw;
+    background-image: url(assets/acorn.svg);
+    background-size: 100%;
+}
+
+.acorn_falling {
+    animation: falling 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes falling {
+    from {
+        transform: translateY(-15vw) rotate(0);
+
+    }
+
+    to {
+        transform: translateY(55vw) rotate(1440deg);
+
+    }
+
+}
+
+.rotation {
+    animation: rotating 3s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes rotating {
+
+    to {
+        transform: rotate(383deg);
+    }
+}
+
+
+
+#acorn_container_0 {
+
+
+}
+
+.acorn_pos1 {
+    position: absolute;
+    left: 32vw;
+   top: -8vw;
+}
+
+
+#acorn_container_1 {
+
+}
+
+.acorn_pos2 {
+     position: absolute;
+    left: 48vw;
+     top: -8vw;
+}
+
+#acorn_container_2 {
+
+
+}
+
+.acorn_pos3 {
+     position: absolute;
+    left: 12vw;
+   top: -8vw;
+}
+
+#acorn_container_3 {
+
+
+}
+
+.acorn_pos4 {
+     position: absolute;
+    left: 22vw;
+    top: -8vw;
+}
+.acorn_pos5 {
+     position: absolute;
+    left: 2vw;
+    top: -8vw;
+}
+.acorn_pos6 {
+     position: absolute;
+    left: 17vw;
+     top: -8vw;
+}
+.acorn_pos7 {
+     position: absolute;
+    left: 41vw;
+     top: -8vw;
+}
+.acorn_pos8 {
+     position: absolute;
+    left: 60vw;
+     top: -8vw;
+}
+.acorn_pos9 {
+     position: absolute;
+    left: 53vw;
+     top: -8vw;
+}
+
+
+.walnut_sprite {
+    background-image: url(assets/walnut.svg);
+    background-size: 100%;
+    width: 4.2vw;
+    height: 4.2vw;
+}
+
+.walnut_falling {
+    animation: falling 7s;
+    animation-iteration-count: infinite;
+}
+
+
+#walnut_container_0 {}
+
+.walnut {
+
+}
+
+.walnut_pos1 {
+    position: absolute;
+    left: 8vw;
+    top: -7vw;
+}
+
+#walnut_container_1 {}
+
+.walnut_pos2 {
+    position: absolute;
+    left: 18vw;
+    top: -7vw;
+}
+.walnut_pos3 {
+    position: absolute;
+    left: 28vw;
+   top: -7vw;
+}
+.walnut_pos4 {
+    position: absolute;
+    left: 38vw;
+    top: -7vw;
+}
+.walnut_pos5 {
+    position: absolute;
+    left: 48vw;
+    top: -7vw;
+}
+.walnut_pos6 {
+    position: absolute;
+    left: 37vw;
+    top: -7vw;
+}
+
+
+
+
+.macadamia_sprite {
+    background-image: url(assets/macadamia.svg);
+    background-size: 100%;
+    width: 4.8vw;
+    height: 4.3vw;
+}
+
+/*.macadamia_falling_skew {
+    animation: macadamia_falling_skew 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 7s;
+}
+
+@keyframes macadamia_falling_skew {
+    from {
+        transform: translate(18vw, -20vw);
+    }
+
+    to {
+        transform: translate(9vw, 60vw);
+    }
+}
+*/
+.macadamia_falling {
+    animation: macadamia_falling 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 5s;
+
+}
+
+@keyframes macadamia_falling {
+    from {
+        transform: translateY(-30vw) rotate(0);
+    }
+
+    to {
+        transform: translateY(60vw) rotate(760deg);
+    }
+}
+
+.macadamia {
+
+}
+
+#macadamia_container_0 {}
+
+.macadamia_pos1 {
+     position: absolute;
+    left: 10vw;
+    top: -9vw;
+}
+
+#macadamia_container_1 {}
+
+.macadamia_pos2 {
+     position: absolute;
+    left: 14vw;
+    top: -9vw;
+}
+.macadamia_pos3 {
+     position: absolute;
+    left: 27vw;
+    top: -6vw;
+}
+.macadamia_pos4 {
+     position: absolute;
+    left: 33vw;
+    top: -6vw;
+}
+.macadamia_pos5 {
+     position: absolute;
+    left: 49vw;
+    top: -6vw;
+}
+.macadamia_pos6 {
+     position: absolute;
+    left: 55vw;
+    top: -6vw;
+}
+
+.almond_sprite {
+    background-image: url(assets/almond.svg);
+    background-size: 100%;
+    width: 4.2vw;
+    height: 7vw;
+
+}
+
+.almond_falling {
+    animation: falling 5s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+.almond {}
+
+#almond_container_0 {}
+
+.almond_pos1 {
+    position: absolute;
+    left: 20vw;
+    top: -8vw;
+}
+
+.almond_pos2 {
+    position: absolute;
+    left: 15vw;
+    top: -8vw;
+}
+
+.almond_pos3 {
+    position: absolute;
+    left: 25vw;
+    top: -8vw;
+}
+
+.almond_pos4 {
+    position: absolute;
+    left: 5vw;
+    top: -8vw;
+}
+
+.almond_pos5 {
+    position: absolute;
+    left: 30vw;
+    top: -8vw;
+}
+
+.almond_pos6 {
+    position: absolute;
+    left: 35vw;
+    top: -8vw;
+}
+
+.stop {
+    animation-play-state: paused;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        grid-template-areas: "game"
+            "info";
+    }
+
+    aside {
+        margin-left: 2vw;
+    }
+
+    #screen {
+        display: block;
+        justify-content: center;
+        margin-left: 2vw;
+
+    }
+    ul {
+
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+}
+    li {
+
+        padding-left: 0vw;
+        padding-right: 5vw;
+    }
+
+}
